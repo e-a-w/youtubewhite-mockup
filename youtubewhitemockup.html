@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
@@ -31,46 +31,44 @@
   </header>
 
   <!-- sidebar -->
-		<aside>
+		<aside id="sidebar">
       <ul class="side-nav">
-        <span class="side-nav-item"><li>
-          GUIDE
-        </li></span>
-        <a href="#" class="side-nav-item"><li>
+        <li class="side-nav-item">GUIDE</li>
+        <li class="side-nav-item"><a href="#">
             <span class="apostol"></span>Apostol
-        </li></a>
-        <a href="#"  class="side-nav-item"><li>
+        </a></li>
+        <li class="side-nav-item"><a href="#">
             <span class="to-watch"></span>To Watch
-          </li></a>
-        <a href="#" class="side-nav-item"><li>
+        </a></li>
+        <li class="side-nav-item"><a href="#">
             <span class="subscriptions"></span>Subscriptions
-          </li></a>
-        <a href="#" class="side-nav-item"><li>
+        </a></li>
+        <li class="side-nav-item"><a href="#">
             <span class="history"></span>History
-          </li></a>
-        <a href="#" class="side-nav-item"><li>
+        </a></li>
+        <li class="side-nav-item"><a href="#">
             <span class="watch-later"></span>Watch Later
-          </li></a>
+        </a></li>
       </ul>
 		</aside>
 
   <!-- left arrow -->
-    <section id="left-arrow">
+    <div id="left-arrow">
       <div class="arrow"></div>
-    </section>
+    </div>
 
   <!-- video player -->
-		<section id="video-section">
+		<main id="video-section">
       <div id="video-player">
-        <iframe src="https://www.youtube.com/embed/jEnd8JIMii4" frameborder="0"></iframe>
+        <iframe src="https://www.youtube.com/embed/jEnd8JIMii4" title="video player"></iframe>
       </div> <!--end video-player-->
-		</section>
+		</main>
 
 
   <!-- right arrow -->
-    <section id="right-arrow">
+    <div id="right-arrow">
       <div class="arrow"></div>
-    </section>
+    </div>
 
 
   <!-- video info section -->
@@ -105,23 +103,23 @@
     <!-- video like/dislike buttons -->
     <div id="thumbs-option" class="right-vid-items ">
       <button type="button" class="like">
-          <div class="thumb-up"></div>Like
+          <span class="thumb-up"></span>Like
       </button>
       <button type="button" class="dislike">
-          <div class="thumb-down"></div>Dislike
+          <span class="thumb-down"></span>Dislike
       </button>
     </div>
 	</section> <!-- end info section -->
 
     <!-- about box + line -->
-    <section id="about">
+    <div id="about">
         <div class="about-line">
           <button type="button" class="about-title">About</button>
         </div>
-    </section>
+      </div>
 
     <!-- comment section -->
-		<section id="comment-section">
+		<aside id="comment-section">
 
         <!-- first comment-->
         <div class="comment">
@@ -167,7 +165,7 @@
             Wonderful long version video, I subscribed :)<br/>I am pianist Myriam from Germany!
           </div>
         </div>
-		</section> <!--end comment section-->
+      </aside> <!--end comment section-->
 	</div> <!-- end page container-->
 
 </body>

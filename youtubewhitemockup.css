@@ -57,6 +57,12 @@ header {
     font-weight: 300;
 }
 
+header a, header a:visited {
+  font-size: 1rem;
+  color: var(--light-gray);
+  font-weight: 300;
+}
+
 #header-left {
   grid-area: header-left;
   padding-left: 1.5rem;
@@ -88,7 +94,7 @@ header {
   background-repeat: no-repeat;
   padding: .25rem 0 0 1.5rem;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid transparent;
 }
 
 .searchbox::placeholder, .searchbox[type="text"] {
@@ -114,13 +120,6 @@ header {
   margin: 0 .5rem;
 }
 
-a.right-header-item, a:visited.right-header-item, a:active.right-header-item {
-  text-decoration: none;
-  font-size: 1rem;
-  color: var(--light-gray);
-  font-weight: 300;
-}
-
 a:hover.right-header-item {
   text-decoration: underline;
 }
@@ -143,7 +142,7 @@ a:hover.right-header-item {
   background-size: contain;
   width: .5rem;
   height: .5rem;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid transparent;
 }
 
 .profile-img-link:hover .profile-down-arrow {
@@ -152,13 +151,13 @@ a:hover.right-header-item {
 
 /* SIDEBAR */
 
-aside {
+#sidebar {
   grid-area: sidebar;
   padding: 1rem 1rem 1rem 1.5rem;
   border-right: 1px solid var(--lightest-gray);
 }
 
-aside a:hover {
+#sidebar a:hover {
   text-decoration: none;
 }
 
@@ -167,18 +166,9 @@ aside a:hover {
   flex-direction: column;
 }
 
-.side-nav-item li {
+.side-nav li {
   padding-left: .5rem;
   margin-left: -40px;
-  border-bottom: 1px solid white;
-}
-
-.side-nav-item:first-child li:hover {
-  border-bottom: 1px solid white;
-}
-
-.side-nav-item li:hover {
-  border-bottom: 1px solid var(--dark-gray);
 }
 
 .side-nav-item {
@@ -186,11 +176,25 @@ aside a:hover {
   margin: 0 0 .25rem;
   padding: .25rem 0;
   font-weight: 400;
+  border-bottom: 1px solid transparent;
+}
+
+.side-nav-item a {
+  display: block;
 }
 
 .side-nav-item:first-child {
   font-weight: 300;
 }
+.side-nav-item:first-child:hover {
+  border-bottom: 1px solid transparent;
+}
+
+.side-nav-item:hover {
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+/* Sidebar Icons */
 
 .apostol {
   background-image: url('/icons/change-user-512.png');
@@ -417,17 +421,42 @@ aside a:hover {
 .subscribe-btn, .sub-count {
   border-radius: 10%;
   padding: .5rem;
+  transition: opacity .3s ease;
 }
 
 .subscribe-btn:hover {
-  opacity: .8;
+  opacity: .7;
 }
 
 .sub-count {
+  position: relative;
   border: 1px solid var(--light-gray);
   margin: 0 .5rem;
   color: var(--dark-gray);
   background: var(--off-white);
+}
+
+.sub-count::before, .sub-count::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.sub-count::after {
+  left: -4px;
+  top: 35%;
+  border-width: 4px 4px 4px 0;
+  border-color: transparent var(--off-white) transparent transparent;
+}
+
+.sub-count::before {
+  left: -6px;
+  top: 30%;
+  border-width: 5px 5px 6px 1px;
+  border-color: transparent var(--light-gray) transparent transparent;  
 }
 
 #thumbs-option {
@@ -447,6 +476,7 @@ aside a:hover {
   border-radius: 10%;
   border: none;
   cursor: pointer;
+  transition: background .5s ease;
 }
 
 .like:hover, .dislike:hover {
@@ -497,6 +527,11 @@ aside a:hover {
   border: .1rem solid rgb(216, 216, 216);
   border-radius: 10%;
   padding: .5rem 1rem;
+  transition: background .8s ease;
+}
+
+.about-title:hover {
+  background: var(--off-white);
 }
 
 /* COMMENTS */
@@ -602,8 +637,9 @@ aside a:hover {
   height: 1.2rem;
   width: 1.2rem;
   cursor: pointer;
-  background-size: contain;
+  background-size: 100% 100%;
   background-image: url('/icons/thumbs-up-512.png');
+  transition: opacity .3s ease;
 }
 
 .comment-thumb-down {
