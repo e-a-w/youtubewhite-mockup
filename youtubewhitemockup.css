@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* icons from https://www.iconsdb.com/ || they would not show up when directly linked, so I downloaded & linked from folder */
+
+:root {
+  box-sizing: border-box;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  --light-gray: #ccc;
+  --dark-gray: #a8a8a8;
+  --lightest-gray: rgb(240, 240, 240);
+  --off-white: rgb(248, 248, 248);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: lightblue url('https://eddecosta.com/wp-content/uploads/2018/06/Ascend-Blue-Mountains-Background-2.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  color: var(--dark-gray);
+}
+
+a, a:visited, a:active, a:focus {
+  text-decoration: none;
+  color: var(--dark-gray);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* CONTAINER */
+
+#container {
+  background: white;
+  margin-top: 0;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: 25vw 5vw 65vw 5vw;
+  grid-template-areas: 
+  "header-left header-left header-right header-right"
+  "sidebar left-arrow video right-arrow"
+  "sidebar info info info"
+  "sidebar about about about"
+  "sidebar comments comments comments";
+}
+
+/* HEADER  LEFT*/
+
+header {
+    padding: 1rem 0;
+    color: var(--light-gray);
+    font-weight: 300;
+}
+
+#header-left {
+  grid-area: header-left;
+  padding-left: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 3em;
+  height: 3rem;
+  background-image: url('/icons/youtube-512.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.left-header-line {
+  padding: 0 .25rem 0 .5rem;
+}
+
+.searchbox {
+  width: 100%;
+  margin-left: 10%;
+  background-image: url('/icons/search-12-512.png');
+  background-position: left;
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  padding: .25rem 0 0 1.5rem;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.searchbox::placeholder, .searchbox[type="text"] {
+  color: var(--light-gray);
+  font-weight: 300;
+}
+
+.searchbox:hover {
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* RIGHT HEADER */
+
+#header-right {
+    grid-area: header-right;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.right-header-item {
+  margin: 0 .5rem;
+}
+
+a.right-header-item, a:visited.right-header-item, a:active.right-header-item {
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--light-gray);
+  font-weight: 300;
+}
+
+a:hover.right-header-item {
+  text-decoration: underline;
+}
+
+.profile-img-link {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  background-image: url('https://www.shareicon.net/data/2016/07/05/791224_man_512x512.png');
+  background-size: cover;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+}
+
+.profile-down-arrow {
+  background-image: url('/icons/arrow-217-512.png');
+  background-size: contain;
+  width: .5rem;
+  height: .5rem;
+  border-bottom: 1px solid white;
+}
+
+.profile-img-link:hover .profile-down-arrow {
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* SIDEBAR */
+
+aside {
+  grid-area: sidebar;
+  padding: 1rem 1rem 1rem 1.5rem;
+  border-right: 1px solid var(--lightest-gray);
+}
+
+aside a:hover {
+  text-decoration: none;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-nav-item li {
+  padding-left: .5rem;
+  margin-left: -40px;
+  border-bottom: 1px solid white;
+}
+
+.side-nav-item:first-child li:hover {
+  border-bottom: 1px solid white;
+}
+
+.side-nav-item li:hover {
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+.side-nav-item {
+  list-style-type: none;
+  margin: 0 0 .25rem;
+  padding: .25rem 0;
+  font-weight: 400;
+}
+
+.side-nav-item:first-child {
+  font-weight: 300;
+}
+
+.apostol {
+  background-image: url('/icons/change-user-512.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .5rem;
+  display: inline-block;
+}
+
+.to-watch {
+  background-image: url('/icons/globe-512.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .5rem;
+  display: inline-block;
+}
+
+.subscriptions {
+  background-image: url('/icons/favorite-3-512.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .5rem;
+  display: inline-block;
+}
+
+.history {
+  background-image: url('/icons/clipboard-8-512.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .5rem;
+  display: inline-block;
+}
+
+.watch-later {
+  background-image: url('/icons/clock-3-512.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .5rem;
+  display: inline-block;
+}
+
+/* LEFT & RIGHT ARROW */
+
+#right-arrow, #left-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--off-white);
+  cursor: pointer;
+}
+
+#right-arrow {
+  grid-area: right-arrow;
+}
+
+#left-arrow {
+  grid-area: left-arrow;
+}
+
+.arrow {
+  background-image: url('/icons/arrow-88-512.png');
+  background-size: contain;
+  height: 1rem;
+  width: 1rem;
+}
+
+#right-arrow:hover .arrow, #left-arrow:hover .arrow {
+  background-image: url('/icons/arrow-88-512-dark.png');
+}
+
+/* VIDEO */
+
+#video-section {
+  grid-area: video;
+  background: var(--off-white);
+}
+
+#video-player {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+#video-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* INFORMATION */
+
+#info-section {
+  grid-area: info;
+  width: 65vw;
+  padding: 0 3vw;
+  border-left: 1px solid var(--lightest-gray);
+  border-right: 1px solid var(--lightest-gray);
+  justify-self: center;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+  "vid-title views"
+  "vid-info like-bar"
+  "subscribe thumbs";
+}
+
+#vid-title {
+  grid-area: vid-title;
+  margin: 0;
+  padding: 1rem 0;
+  color: black;
+  font-weight: 500;
+}
+
+#via-container {
+  grid-area: vid-info;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: -1rem;
+  padding: 0;
+}
+
+.via-item {
+  list-style-type: none;
+  margin: 0;
+  font-size: .8rem;
+}
+
+.via {
+  display: flex;
+  align-items: center;
+  color: var(--font-gray);
+}
+
+.via-img {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0 .5rem;
+  background-image: url('https://www.shareicon.net/data/2016/07/05/791218_man_512x512.png');
+  background-size: contain;
+  border-radius: 100%;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.published-on {
+  padding: 0 .5rem;
+  color: var(--light-gray);
+}
+
+.right-vid-items {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+#views {
+  grid-area: views;
+  color: black;
+  font-weight: lighter;
+}
+
+#like-bar {
+  margin-top: -.5rem;
+  align-self: flex-start;
+  grid-area: like-bar;
+  padding-left: 40%;
+}
+
+.likebar-gray {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: var(--lightest-gray);
+  transition: height .5s ease;
+}
+
+.likebar-green {
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  background: lightgreen;
+  transition: height .5s ease;
+}
+
+.likebar-gray:hover, .likebar-gray:hover .likebar-green {
+  height: 10px;
+}
+
+#subscribe {
+  grid-area: subscribe;
+  margin-top: -.75rem;
+  display: flex;
+  align-items: center;
+  font-size: .8rem;
+}
+
+.subscribe-btn {
+  border: none;
+  color: white;
+  background: red;
+  margin: 1rem 0;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+.subscribe-btn, .sub-count {
+  border-radius: 10%;
+  padding: .5rem;
+}
+
+.subscribe-btn:hover {
+  opacity: .8;
+}
+
+.sub-count {
+  border: 1px solid var(--light-gray);
+  margin: 0 .5rem;
+  color: var(--dark-gray);
+  background: var(--off-white);
+}
+
+#thumbs-option {
+  grid-area: thumbs;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.like, .dislike {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 .5rem .5rem;
+  padding: .25rem .5rem;
+  background: var(--lightest-gray);
+  color: var(--dark-gray);
+  border-radius: 10%;
+  border: none;
+  cursor: pointer;
+}
+
+.like:hover, .dislike:hover {
+  background: var(--off-white);
+}
+
+.thumb-up, .thumb-down {
+  margin: .25rem;
+  background-image: url('/icons/thumb-up-512.png');
+  height: 1.25rem;
+  width: 1.25rem;
+  background-size: cover;
+}
+
+.thumb-down {
+  transform: scaleY(-1);
+}
+
+
+/* ABOUT BANNER */
+
+#about {
+  grid-area: about;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  width: 65vw;
+  padding: 0 3vw;
+  border-left: 1px solid var(--lightest-gray);
+  border-right: 1px solid var(--lightest-gray);
+}
+
+.about-line {
+  position: relative;
+  border-bottom: .1rem solid var(--lightest-gray);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 2.5rem;
+}
+
+.about-title {
+  cursor: pointer;
+  color: var(--light-gray);
+  position: absolute;
+  top: -1.1rem;
+  background: white;
+  border: .1rem solid rgb(216, 216, 216);
+  border-radius: 10%;
+  padding: .5rem 1rem;
+}
+
+/* COMMENTS */
+
+#comment-section {
+  grid-area: comments;
+  width: 65vw;
+  padding: 0 3vw;
+  border-left: 1px solid var(--lightest-gray);
+  border-right: 1px solid var(--lightest-gray);
+  justify-self: center;
+}
+
+.comment {
+  padding: .5rem 0;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 4rem auto;
+  grid-template-areas:
+  "comment-img comment-top"
+  "comment-img comment-text";
+  margin: 0 0 2rem;
+}
+
+.comment:first-child {
+  border-left: .3rem solid lightgreen;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+  "comment-img comment-top"
+  "comment-img comment-text"
+  "comment-img comment-thumbs";
+}
+
+.comment > div {
+  padding: .5rem;
+}
+
+.comment:nth-child(odd) {
+  background-color: var(--off-white);
+}
+
+.comment-profile-img {
+  grid-area: comment-img;
+  padding-top: .25rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.commenter-img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+  background-size: cover;
+}
+
+.first-comment {
+  background-image: url('https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  background-position: center;
+}
+
+.second-comment {
+  background-image: url('https://image.shutterstock.com/z/stock-photo-attractive-african-american-headshot-dressed-in-a-suit-and-tie-facing-the-camera-square-32144746.jpg');
+  background-position: center;
+}
+
+.third-comment {
+  background-image: url('https://st.depositphotos.com/1905901/1876/i/950/depositphotos_18762961-stock-photo-headshot-of-beautiful-brunette.jpg');
+}
+
+.comment-top {
+  grid-area: comment-top;
+}
+
+.commenter-name a, .commenter-name a:visited, comment-text a, .comment-text a:visited {
+  color: black;
+}
+
+.commenter-name {
+  font-weight: 500;
+  color: black;
+}
+
+.comment-date {
+  font-size: .8rem;
+  font-weight: 300;
+}
+
+.comment-text {
+  color: black;
+  grid-area: comment-text;
+  font-weight: 300;
+}
+
+.comment-thumbs {
+  grid-area: comment-thumbs;
+  display: flex;
+  align-items: center;
+}
+
+.comment-thumb-up, .comment-thumb-down {
+  display: inline-block;
+  height: 1.2rem;
+  width: 1.2rem;
+  cursor: pointer;
+  background-size: contain;
+  background-image: url('/icons/thumbs-up-512.png');
+}
+
+.comment-thumb-down {
+  background-image: url('/icons/thumbs-down-512.png');
+  opacity: .5;
+}
+
+.comment-thumb-up:hover {
+  opacity: .7;
+}
+
+.comment-thumb-down:hover {
+  opacity: .3;
+}
+
+.comment-like-count {
+  color: lightgreen;
+  font-size: .8rem;
+  padding: 0rem 1rem 0 .25rem;
+  margin-top: .2rem;
+}
+
+/* Media Queries */
+
+@media only screen and (min-width: 800px) {
+  #container {
+    margin-top: 2rem;
+    width: 70vw;
+    grid-template-columns: 17vw 4vw 45vw 4vw;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #info-section, #about, #comment-section {
+    width: 45vw;
+  }
+}
