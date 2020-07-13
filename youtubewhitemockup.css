@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-/* icons from https://www.iconsdb.com/ || they would not show up when directly linked, so I downloaded & linked from folder */
+
+/* icons from https://www.iconsdb.com/ --> they would not show up when directly linked, so I downloaded & linked from folder */
 
 :root {
   box-sizing: border-box;
@@ -11,12 +12,15 @@
   --off-white: rgb(248, 248, 248);
 }
 
+/* variables appear as errors on CSS validator,
+but when I googled the issue,
+I found the validator just hasn't updated to include them yet */
+
+
 body {
   margin: 0;
   padding: 0;
-  background: lightblue url('https://eddecosta.com/wp-content/uploads/2018/06/Ascend-Blue-Mountains-Background-2.jpg');
-  background-position: center;
-  background-attachment: fixed;
+  background: lightblue url('https://eddecosta.com/wp-content/uploads/2018/06/Ascend-Blue-Mountains-Background-2.jpg') fixed center;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -181,6 +185,7 @@ a:hover.right-header-item {
 
 .side-nav-item a {
   display: block;
+  word-wrap: break-word;
 }
 
 .side-nav-item:first-child {
@@ -198,46 +203,26 @@ a:hover.right-header-item {
 
 .apostol {
   background-image: url('/icons/change-user-512.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 1rem;
-  height: 1rem;
-  margin-right: .5rem;
-  display: inline-block;
 }
 
 .to-watch {
   background-image: url('/icons/globe-512.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 1rem;
-  height: 1rem;
-  margin-right: .5rem;
-  display: inline-block;
 }
 
 .subscriptions {
   background-image: url('/icons/favorite-3-512.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 1rem;
-  height: 1rem;
-  margin-right: .5rem;
-  display: inline-block;
 }
 
 .history {
   background-image: url('/icons/clipboard-8-512.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 1rem;
-  height: 1rem;
-  margin-right: .5rem;
-  display: inline-block;
+
 }
 
 .watch-later {
   background-image: url('/icons/clock-3-512.png');
+}
+
+.watch-later, .history, .subscriptions, .to-watch, .apostol {
   background-size: contain;
   background-repeat: no-repeat;
   width: 1rem;
@@ -297,7 +282,7 @@ a:hover.right-header-item {
   border: none;
 }
 
-/* INFORMATION */
+/* INFORMATION SECTION */
 
 #info-section {
   grid-area: info;
@@ -322,6 +307,8 @@ a:hover.right-header-item {
   color: black;
   font-weight: 500;
 }
+
+/* VIA & PUBLISHED INFO */
 
 #via-container {
   grid-area: vid-info;
@@ -362,6 +349,8 @@ a:hover.right-header-item {
   color: var(--light-gray);
 }
 
+/* INFO ITEMS ON RIGHT */
+
 .right-vid-items {
   display: flex;
   justify-content: flex-end;
@@ -386,7 +375,7 @@ a:hover.right-header-item {
   width: 100%;
   height: 4px;
   background: var(--lightest-gray);
-  transition: height .5s ease;
+  transition: height .5s linear;
 }
 
 .likebar-green {
@@ -394,7 +383,7 @@ a:hover.right-header-item {
   width: 80%;
   height: 4px;
   background: lightgreen;
-  transition: height .5s ease;
+  transition: height .5s linear;
 }
 
 .likebar-gray:hover, .likebar-gray:hover .likebar-green {
@@ -494,7 +483,6 @@ a:hover.right-header-item {
 .thumb-down {
   transform: scaleY(-1);
 }
-
 
 /* ABOUT BANNER */
 
@@ -648,7 +636,7 @@ a:hover.right-header-item {
 }
 
 .comment-thumb-up:hover {
-  opacity: .7;
+  opacity: .5;
 }
 
 .comment-thumb-down:hover {
@@ -664,7 +652,7 @@ a:hover.right-header-item {
 
 /* Media Queries */
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 865px) {
   #container {
     margin-top: 2rem;
     width: 70vw;
@@ -672,7 +660,7 @@ a:hover.right-header-item {
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 865px) {
   #info-section, #about, #comment-section {
     width: 45vw;
   }
