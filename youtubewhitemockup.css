@@ -80,7 +80,7 @@ header a, header a:visited {
   flex-shrink: 0;
   width: 3em;
   height: 3rem;
-  background-image: url('/icons/youtube-512.png');
+  background-image: url('icons/youtube-512.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -92,7 +92,7 @@ header a, header a:visited {
 .searchbox {
   width: 100%;
   margin-left: 10%;
-  background-image: url('/icons/search-12-512.png');
+  background-image: url('icons/search-12-512.png');
   background-position: left;
   background-size: 1rem;
   background-repeat: no-repeat;
@@ -142,7 +142,7 @@ a:hover.right-header-item {
 }
 
 .profile-down-arrow {
-  background-image: url('/icons/arrow-217-512.png');
+  background-image: url('icons/arrow-217-512.png');
   background-size: contain;
   width: .5rem;
   height: .5rem;
@@ -202,24 +202,24 @@ a:hover.right-header-item {
 /* Sidebar Icons */
 
 .apostol {
-  background-image: url('/icons/change-user-512.png');
+  background-image: url('icons/change-user-512.png');
 }
 
 .to-watch {
-  background-image: url('/icons/globe-512.png');
+  background-image: url('icons/globe-512.png');
 }
 
 .subscriptions {
-  background-image: url('/icons/favorite-3-512.png');
+  background-image: url('icons/favorite-3-512.png');
 }
 
 .history {
-  background-image: url('/icons/clipboard-8-512.png');
+  background-image: url('icons/clipboard-8-512.png');
 
 }
 
 .watch-later {
-  background-image: url('/icons/clock-3-512.png');
+  background-image: url('icons/clock-3-512.png');
 }
 
 .watch-later, .history, .subscriptions, .to-watch, .apostol {
@@ -250,14 +250,14 @@ a:hover.right-header-item {
 }
 
 .arrow {
-  background-image: url('/icons/arrow-88-512.png');
+  background-image: url('icons/arrow-88-512.png');
   background-size: contain;
   height: 1rem;
   width: 1rem;
 }
 
 #right-arrow:hover .arrow, #left-arrow:hover .arrow {
-  background-image: url('/icons/arrow-88-512-dark.png');
+  background-image: url('icons/arrow-88-512-dark.png');
 }
 
 /* VIDEO */
@@ -474,7 +474,7 @@ a:hover.right-header-item {
 
 .thumb-up, .thumb-down {
   margin: .25rem;
-  background-image: url('/icons/thumb-up-512.png');
+  background-image: url('icons/thumb-up-512.png');
   height: 1.25rem;
   width: 1.25rem;
   background-size: cover;
@@ -626,12 +626,12 @@ a:hover.right-header-item {
   width: 1.2rem;
   cursor: pointer;
   background-size: 100% 100%;
-  background-image: url('/icons/thumbs-up-512.png');
+  background-image: url('icons/thumbs-up-512.png');
   transition: opacity .3s ease;
 }
 
 .comment-thumb-down {
-  background-image: url('/icons/thumbs-down-512.png');
+  background-image: url('icons/thumbs-down-512.png');
   opacity: .5;
 }
 
@@ -653,6 +653,7 @@ a:hover.right-header-item {
 /* Media Queries */
 
 @media only screen and (min-width: 865px) {
+
   #container {
     margin-top: 2rem;
     width: 70vw;
